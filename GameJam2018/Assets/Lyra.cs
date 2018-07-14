@@ -16,10 +16,10 @@ public class Lyra : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        anim.Play("MoveLoop");
+        //anim.Play("IdleLoop");
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //anim.Play("Run_L");
+            anim.Play("MoveLoop");
             gameObject.transform.Translate(Vector3.left * 0.1f);
             anim.SetFloat("FaceX", -1);
             anim.SetFloat("FaceY", 0);
@@ -27,7 +27,7 @@ public class Lyra : MonoBehaviour {
 
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            //anim.Play("Run_R");
+            anim.Play("MoveLoop");
             gameObject.transform.Translate(Vector3.right * 0.1f);
             anim.SetFloat("FaceX", 1);
             anim.SetFloat("FaceY", 0);
@@ -35,16 +35,16 @@ public class Lyra : MonoBehaviour {
 
         else if (Input.GetKey(KeyCode.UpArrow))
         {
+            anim.Play("MoveLoop");
             gameObject.transform.Translate(Vector3.up * 0.1f);
-            //anim.Play("Run_U");
             anim.SetFloat("FaceX", 0);
             anim.SetFloat("FaceY", 1);
         }
 
         else if (Input.GetKey(KeyCode.DownArrow))
         {
+            anim.Play("MoveLoop");
             gameObject.transform.Translate(Vector3.down * 0.1f);
-            //anim.Play("Run_D");
             anim.SetFloat("FaceX", 0);
             anim.SetFloat("FaceY", -1);
         }
