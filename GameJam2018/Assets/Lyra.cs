@@ -16,7 +16,6 @@ public class Lyra : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        //anim.Play("IdleLoop");
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             anim.Play("MoveLoop");
@@ -47,6 +46,10 @@ public class Lyra : MonoBehaviour {
             gameObject.transform.Translate(Vector3.down * 0.1f);
             anim.SetFloat("FaceX", 0);
             anim.SetFloat("FaceY", -1);
+        }
+        else
+        {
+            anim.Play("IdleLoop");
         }
     }
 }
