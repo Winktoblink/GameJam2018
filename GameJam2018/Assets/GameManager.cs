@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
             Debug.Log(g.name);
             if (g.GetComponent<SpriteRenderer>() != null)
             {
-                g.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
+                g.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(g.transform.position.y * 100f) * -1;
                 Debug.Log(g.GetComponent<SpriteRenderer>().sortingOrder);
             }
         }
