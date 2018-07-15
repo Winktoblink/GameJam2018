@@ -15,7 +15,7 @@ public class Lyra : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
+        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             anim.Play("MoveLoop");

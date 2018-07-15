@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Dyra.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Lyra.cs" />
     <None Include="Assets\AnimationImporter\readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
