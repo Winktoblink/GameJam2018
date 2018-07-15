@@ -77,7 +77,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -92,7 +92,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -109,9 +109,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 32
-        height: 32
+        y: 111
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,7 +119,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c33660d770d432b4f8ea8dec0a99a478
+      spriteID: 64ae3ed6cbb369e4fa9d1e204ea24371
       vertices: []
       indices: 
       edges: []
@@ -128,10 +128,10 @@ TextureImporter:
       name: Lyra 1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
+        x: 16
+        y: 111
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,7 +139,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60d3ecc8446768d42811068af47820e6
+      spriteID: 033847ceb7b6a0d46b0e70826f963b02
       vertices: []
       indices: 
       edges: []
@@ -148,10 +148,10 @@ TextureImporter:
       name: Lyra 2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
+        x: 32
+        y: 111
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,7 +159,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e42a4fe51aaac28479f0275ecda33c7f
+      spriteID: 37156f1a5a38f6d438fe0c45ee6cbac4
       vertices: []
       indices: 
       edges: []
@@ -168,10 +168,10 @@ TextureImporter:
       name: Lyra 3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
+        x: 48
+        y: 111
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,7 +179,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3754178bd814fee4dba2b729e2a0d753
+      spriteID: 6c958161fd32c0d4389d7c9c0b2999f4
       vertices: []
       indices: 
       edges: []
@@ -188,10 +188,10 @@ TextureImporter:
       name: Lyra 4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 96
-        width: 32
-        height: 32
+        x: 64
+        y: 111
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,7 +199,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 365d0bce51fd8644cad1c61242d59f60
+      spriteID: 0e3e4d4e97386d440a3910adad2efe3e
       vertices: []
       indices: 
       edges: []
@@ -208,10 +208,10 @@ TextureImporter:
       name: Lyra 5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 96
-        width: 32
-        height: 32
+        x: 80
+        y: 111
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1fa714a137b3ac439207c4053bced2f
+      spriteID: b3d3f417bf5d81249a261a6847991e55
       vertices: []
       indices: 
       edges: []
@@ -228,10 +228,10 @@ TextureImporter:
       name: Lyra 6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
-        width: 32
-        height: 32
+        x: 96
+        y: 111
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,7 +239,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 649e2136a4b9c0a438c6576f32dae639
+      spriteID: 09686c591e149e44397f0819d29ac4bc
       vertices: []
       indices: 
       edges: []
@@ -248,10 +248,10 @@ TextureImporter:
       name: Lyra 7
       rect:
         serializedVersion: 2
-        x: 224
-        y: 96
-        width: 32
-        height: 32
+        x: 112
+        y: 111
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,7 +259,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a075d136e78bc946a945223d0780714
+      spriteID: 45be7870cd1e94049a8a0fa9115095b1
       vertices: []
       indices: 
       edges: []
@@ -269,9 +269,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 32
-        height: 32
+        y: 94
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,7 +279,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e0512950248731944bb6392dfd3e0dcf
+      spriteID: b2998dd1654ba804799710e7085fe22b
       vertices: []
       indices: 
       edges: []
@@ -288,10 +288,10 @@ TextureImporter:
       name: Lyra 9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
+        x: 16
+        y: 94
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,7 +299,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3b97d7d610030c43aac0c2a960b66b4
+      spriteID: ba8402ecbc4cacd499ec7e1f20ca026c
       vertices: []
       indices: 
       edges: []
@@ -308,10 +308,10 @@ TextureImporter:
       name: Lyra 10
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
+        x: 32
+        y: 94
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,7 +319,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8733e012c97bde74db36aad794327379
+      spriteID: 8b19ee7fcd7636c4c96e94e644d8cdf5
       vertices: []
       indices: 
       edges: []
@@ -328,10 +328,10 @@ TextureImporter:
       name: Lyra 11
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
+        x: 48
+        y: 94
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,7 +339,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb13a66cef1728d4bb5b426d27333f26
+      spriteID: d3f18a3d711294148bd75d0a4ec72218
       vertices: []
       indices: 
       edges: []
@@ -348,10 +348,10 @@ TextureImporter:
       name: Lyra 12
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
-        height: 32
+        x: 64
+        y: 94
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,7 +359,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b32385d05c0354c4985a75f44f7a0381
+      spriteID: 9af4a12e44e0a4049927c849f94eb4bd
       vertices: []
       indices: 
       edges: []
@@ -368,10 +368,10 @@ TextureImporter:
       name: Lyra 13
       rect:
         serializedVersion: 2
-        x: 160
-        y: 64
-        width: 32
-        height: 32
+        x: 80
+        y: 94
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,7 +379,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 160778483fd845f46a1a31d36bcd2562
+      spriteID: 1fe64d202cd31634c9aade1cfded5d77
       vertices: []
       indices: 
       edges: []
@@ -388,10 +388,10 @@ TextureImporter:
       name: Lyra 14
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
-        width: 32
-        height: 32
+        x: 96
+        y: 94
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,7 +399,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27220842846025a48a946f313c3f7808
+      spriteID: 1e15030bb15aee249b997bbbfe5373f9
       vertices: []
       indices: 
       edges: []
@@ -408,10 +408,10 @@ TextureImporter:
       name: Lyra 15
       rect:
         serializedVersion: 2
-        x: 224
-        y: 64
-        width: 32
-        height: 32
+        x: 112
+        y: 94
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,7 +419,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ed30866db3f06e3488750087cb75c351
+      spriteID: f0e4f49c326921945848e6cdec8fc446
       vertices: []
       indices: 
       edges: []
@@ -429,9 +429,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
+        y: 77
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,7 +439,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d8881b39a2fcaa40b166dfc54b315fa
+      spriteID: ccb927ffaabd35a49ae4601a444dc031
       vertices: []
       indices: 
       edges: []
@@ -448,10 +448,10 @@ TextureImporter:
       name: Lyra 17
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
+        x: 16
+        y: 77
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -459,7 +459,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8ee98cd5dfbb9a94a8eabe9eafca81ac
+      spriteID: 61379ec09052e1b4c9dbf4e2f6240c1a
       vertices: []
       indices: 
       edges: []
@@ -468,10 +468,10 @@ TextureImporter:
       name: Lyra 18
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
+        x: 32
+        y: 77
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,7 +479,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eead3d74bbe8e8f43866b2cf2c9bd3a6
+      spriteID: fa9b36753da33574a9d8ff1f98a8e4c0
       vertices: []
       indices: 
       edges: []
@@ -488,10 +488,10 @@ TextureImporter:
       name: Lyra 19
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
+        x: 48
+        y: 77
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,7 +499,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c1b4e74c416d454abf6f1df32be9e35
+      spriteID: 493d01b63d094a249a9d2fb25b5717ae
       vertices: []
       indices: 
       edges: []
@@ -508,10 +508,10 @@ TextureImporter:
       name: Lyra 20
       rect:
         serializedVersion: 2
-        x: 128
-        y: 32
-        width: 32
-        height: 32
+        x: 64
+        y: 77
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,7 +519,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 10b52c8fb7c7c43469ea869381dbd77e
+      spriteID: 7901d4e9886b8f5478d26fb3f22f58eb
       vertices: []
       indices: 
       edges: []
@@ -528,10 +528,10 @@ TextureImporter:
       name: Lyra 21
       rect:
         serializedVersion: 2
-        x: 160
-        y: 32
-        width: 32
-        height: 32
+        x: 80
+        y: 77
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -539,7 +539,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf0f061353331b743849783160584457
+      spriteID: 25233db829266df4a9f5ac860ffdd627
       vertices: []
       indices: 
       edges: []
@@ -548,10 +548,10 @@ TextureImporter:
       name: Lyra 22
       rect:
         serializedVersion: 2
-        x: 192
-        y: 32
-        width: 32
-        height: 32
+        x: 96
+        y: 77
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,7 +559,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c08e3155a54eff0469b6e9025f77668f
+      spriteID: 7479ee9a83efb8542b79c6001b848f01
       vertices: []
       indices: 
       edges: []
@@ -568,10 +568,10 @@ TextureImporter:
       name: Lyra 23
       rect:
         serializedVersion: 2
-        x: 224
-        y: 32
-        width: 32
-        height: 32
+        x: 112
+        y: 77
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -579,7 +579,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 480955cc576a976499bf9aaefe39ac08
+      spriteID: cf594f7914072a34d81c4945a2f06f62
       vertices: []
       indices: 
       edges: []
@@ -589,9 +589,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
+        y: 60
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -599,7 +599,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60012febfe5c46c42856670d08b1f04f
+      spriteID: 4f8ca6bf3976cd442be4bedb9d24a9ca
       vertices: []
       indices: 
       edges: []
@@ -608,10 +608,10 @@ TextureImporter:
       name: Lyra 25
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 16
+        y: 60
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -619,7 +619,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d37d71ba54755f40a978744a17813ab
+      spriteID: e65725541ff1bd54db8d89b95768cec8
       vertices: []
       indices: 
       edges: []
@@ -628,10 +628,10 @@ TextureImporter:
       name: Lyra 26
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 32
+        y: 60
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -639,7 +639,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73c588d86868166409780a99395f72f1
+      spriteID: 8178ea245ee679a40af31a20c8401519
       vertices: []
       indices: 
       edges: []
@@ -648,10 +648,10 @@ TextureImporter:
       name: Lyra 27
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
+        x: 48
+        y: 60
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -659,7 +659,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c9446a42c705574b9a79fe9b1923d54
+      spriteID: 6e75825cd136b234989f9ea9bf707854
       vertices: []
       indices: 
       edges: []
@@ -668,10 +668,10 @@ TextureImporter:
       name: Lyra 28
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
+        x: 64
+        y: 60
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -679,7 +679,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96b1650f1783fb44e94ae4db47830b4b
+      spriteID: d316b6bc3c3b3544e86278a3d7d1cf85
       vertices: []
       indices: 
       edges: []
@@ -688,10 +688,10 @@ TextureImporter:
       name: Lyra 29
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
+        x: 80
+        y: 60
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -699,7 +699,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96602638f5e5fa14489e4602c0c1700e
+      spriteID: f031e24104aaf294f9fd7d23dd0d3c0c
       vertices: []
       indices: 
       edges: []
@@ -708,10 +708,10 @@ TextureImporter:
       name: Lyra 30
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
+        x: 96
+        y: 60
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -719,7 +719,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e28952b0a2f7dcd409d2fb9b2c3bf6fe
+      spriteID: ead7fba31489a3641ba26d4141c60936
       vertices: []
       indices: 
       edges: []
@@ -728,10 +728,10 @@ TextureImporter:
       name: Lyra 31
       rect:
         serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
+        x: 112
+        y: 60
+        width: 16
+        height: 17
       alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -739,7 +739,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9bfaf92845880940b0f47adcf39556a
+      spriteID: 2904ee59dd9b4504b9b9e72ce7f7ba8c
       vertices: []
       indices: 
       edges: []
@@ -747,7 +747,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 64a1c53a35d53ed498c25fc9312e7355
+    spriteID: 0d9b9a11e95ac2b4cb42cf035f186046
     vertices: []
     indices: 
     edges: []
