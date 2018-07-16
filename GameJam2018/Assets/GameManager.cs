@@ -39,11 +39,11 @@ public class GameManager : MonoBehaviour
         foreach (object o in obj)
         {
             GameObject g = (GameObject)o;
-            Debug.Log(g.name);
+            //Debug.Log(g.name);
             if (g.GetComponent<SpriteRenderer>() != null)
             {
                 g.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(g.transform.position.y * 100f) * -1;
-                Debug.Log(g.GetComponent<SpriteRenderer>().sortingOrder);
+                //Debug.Log(g.GetComponent<SpriteRenderer>().sortingOrder);
             }
         }
     }

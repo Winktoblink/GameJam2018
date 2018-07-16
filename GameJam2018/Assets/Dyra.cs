@@ -5,11 +5,15 @@ using UnityEngine;
 public class Dyra : MonoBehaviour {
 
     Animator anim;
+    string direction;
+    float speed;
 
     // Use this for initialization
     void Start () {
         //Fetch the Animator from GameObject
         anim = GetComponent<Animator>();
+        direction = "down";
+        speed = 0.1f;
 
     }
 
@@ -19,15 +23,16 @@ public class Dyra : MonoBehaviour {
         if (Input.GetKey(KeyCode.A))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.left * 0.1f);
+            gameObject.transform.Translate(Vector3.left * speed);
             anim.SetFloat("FaceX", -1);
             anim.SetFloat("FaceY", 0);
+            direction = "left";
         }
 
         else if (Input.GetKey(KeyCode.D))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.right * 0.1f);
+            gameObject.transform.Translate(Vector3.right * speed);
             anim.SetFloat("FaceX", 1);
             anim.SetFloat("FaceY", 0);
         }
@@ -35,7 +40,7 @@ public class Dyra : MonoBehaviour {
         else if (Input.GetKey(KeyCode.W))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.up * 0.1f);
+            gameObject.transform.Translate(Vector3.up *speed );
             anim.SetFloat("FaceX", 0);
             anim.SetFloat("FaceY", 1);
         }
@@ -43,7 +48,7 @@ public class Dyra : MonoBehaviour {
         else if (Input.GetKey(KeyCode.S))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.down * 0.1f);
+            gameObject.transform.Translate(Vector3.down * speed);
             anim.SetFloat("FaceX", 0);
             anim.SetFloat("FaceY", -1);
         }
