@@ -19,7 +19,7 @@ public class Lyra : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.SetFloat("FaceX", 0);
         anim.SetFloat("FaceY", -1);
-        speed = 0.1f;
+        speed = 0.2f;
         dashCount = 1;
         isDashing = false;
     }
@@ -99,7 +99,7 @@ public class Lyra : MonoBehaviour
         else
         {
             //Dash at 2x speed
-            gameObject.transform.Translate(direction * speed * 2 * (dashLength - dashCount)/dashLength);
+            gameObject.transform.Translate(direction * speed * 2f * (dashLength - dashCount)/dashLength);
             dashCount++;
         }
     }

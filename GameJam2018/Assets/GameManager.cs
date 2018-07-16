@@ -58,7 +58,8 @@ public class GameManager : MonoBehaviour
             if (smokeExists == false)
             {
                 GameObject thePlayer = GameObject.Find("Lyra");
-                Instantiate(smokeBomb, thePlayer.transform.position, thePlayer.transform.rotation);
+                Vector3 smokeSpawn = thePlayer.transform.position + new Vector3(0, -2.25f, 0);
+                Instantiate(smokeBomb, smokeSpawn, thePlayer.transform.rotation);
                 smokeExists = true;
             }
         }

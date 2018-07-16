@@ -5,14 +5,12 @@ using UnityEngine;
 public class Dyra : MonoBehaviour {
 
     Animator anim;
-    string direction;
     float speed;
 
     // Use this for initialization
     void Start () {
         //Fetch the Animator from GameObject
         anim = GetComponent<Animator>();
-        direction = "down";
         speed = 0.1f;
 
     }
@@ -26,7 +24,6 @@ public class Dyra : MonoBehaviour {
             gameObject.transform.Translate(Vector3.left * speed);
             anim.SetFloat("FaceX", -1);
             anim.SetFloat("FaceY", 0);
-            direction = "left";
         }
 
         else if (Input.GetKey(KeyCode.D))
