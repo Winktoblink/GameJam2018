@@ -3101,6 +3101,12 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114510339467630990, guid: 0cd28109fee21ca48a1795c6730ebd06,
+        type: 2}
+      propertyPath: smokeBomb
+      value: 
+      objectReference: {fileID: 1750621763411316, guid: 078fbd11819456940b071d5aecd266b0,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cd28109fee21ca48a1795c6730ebd06, type: 2}
   m_IsPrefabAsset: 0
@@ -12308,6 +12314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c129104fa14df0b41ba53c5cda02d657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smokeBomb: {fileID: 1750621763411316, guid: 078fbd11819456940b071d5aecd266b0, type: 2}
 --- !u!4 &1457971421
 Transform:
   m_ObjectHideFlags: 0

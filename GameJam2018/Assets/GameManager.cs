@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
+    public GameObject smokeBomb;
+    public static bool smokeExists;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     //Initializes the game for each level.
     void InitGame()
     {
+        smokeExists = false;
         object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
         foreach (object o in obj)
         {
@@ -50,6 +53,14 @@ public class GameManager : MonoBehaviour
     //Update is called every frame.
     void Update()
     {
-
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (smokeExists == false)
+            {
+                GameObject thePlayer = GameObject.Find("Lyra");
+                Instantiate(smokeBomb, thePlayer.transform.position, thePlayer.transform.rotation);
+                smokeExists = true;
+            }
+        }
     }
 }
