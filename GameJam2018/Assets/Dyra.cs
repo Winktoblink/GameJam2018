@@ -2,26 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dyra : MonoBehaviour {
+public class Dyra : MonoBehaviour
+{
 
     Animator anim;
     float speed;
+    Vector3 direction;
+    const int dashLength = 30;
+    int dashCount;
+    bool isDashing;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         //Fetch the Animator from GameObject
         anim = GetComponent<Animator>();
-        speed = 0.1f;
-
+        anim.SetFloat("FaceX", 0);
+        anim.SetFloat("FaceY", -1);
+        speed = 5f;
+        dashCount = 1;
+        isDashing = false;
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
+        //Set sorting order based on y value, enables rendering behind/infront of objects
+        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
 
+        //Only allow movement input if not dashing
+        if (isDashing)
+        {
+            Dashing();
+        }
+        else
+        {
+            Movement();
+        }
+    }
+
+    void Movement()
+    {
+        //Movement inputs
         if (Input.GetKey(KeyCode.A))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.left * speed);
+            gameObject.transform.Translate(Vector3.left * speed * Time.deltaTime);
             anim.SetFloat("FaceX", -1);
             anim.SetFloat("FaceY", 0);
         }
@@ -29,7 +55,7 @@ public class Dyra : MonoBehaviour {
         else if (Input.GetKey(KeyCode.D))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.right * speed);
+            gameObject.transform.Translate(Vector3.right * speed * Time.deltaTime);
             anim.SetFloat("FaceX", 1);
             anim.SetFloat("FaceY", 0);
         }
@@ -37,7 +63,7 @@ public class Dyra : MonoBehaviour {
         else if (Input.GetKey(KeyCode.W))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.up *speed );
+            gameObject.transform.Translate(Vector3.up * speed * Time.deltaTime);
             anim.SetFloat("FaceX", 0);
             anim.SetFloat("FaceY", 1);
         }
@@ -45,7 +71,7 @@ public class Dyra : MonoBehaviour {
         else if (Input.GetKey(KeyCode.S))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.down * speed);
+            gameObject.transform.Translate(Vector3.down * speed * Time.deltaTime);
             anim.SetFloat("FaceX", 0);
             anim.SetFloat("FaceY", -1);
         }
@@ -53,5 +79,33 @@ public class Dyra : MonoBehaviour {
         {
             anim.Play("IdleLoop");
         }
+
+        if (Input.GetKey(KeyCode.Q) && GameManager.dyraAnimal == GameManager.spiritAnimal.cat)
+        {
+            isDashing = true;
+            //Infer direction for dash based on current heading
+            direction = new Vector3(anim.GetFloat("FaceX"), anim.GetFloat("FaceY"), 0);
+        }
+        if (Input.GetKey(KeyCode.E) && GameManager.dyraAnimal == GameManager.spiritAnimal.mouse)
+        {
+            GameManager.Instance.playSmoke(this.transform.position, this.transform.rotation);
+        }
     }
+
+    void Dashing()
+    {
+        anim.Play("DashLoop");
+        if (dashCount > dashLength)
+        {
+            dashCount = 1;
+            isDashing = false;
+        }
+        else
+        {
+            //Dash at 2x speed
+            gameObject.transform.Translate(direction * speed * 2f * Time.deltaTime * (dashLength - dashCount)/dashLength);
+            dashCount++;
+        }
+    }
+
 }

@@ -5,21 +5,26 @@ using System.Collections.Generic;       //Allows us to use Lists.
 public class GameManager : MonoBehaviour
 {
 
-    public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
-    public GameObject smokeBomb;
+    public static GameManager Instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
+    public GameObject spawnSmoke;
+    public GameObject spawnLyra;
+    public GameObject spawnDyra;
     public static bool smokeExists;
-
+    public enum spiritAnimal {cat, mouse};
+    public static spiritAnimal lyraAnimal;
+    public static spiritAnimal dyraAnimal;
+    
     //Awake is always called before any Start functions
     void Awake()
     {
         //Check if instance already exists
-        if (instance == null)
+        if (Instance == null)
 
             //if not, set instance to this
-            instance = this;
+            Instance = this;
 
         //If instance already exists and it's not this:
-        else if (instance != this)
+        else if (Instance != this)
 
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
@@ -35,15 +40,17 @@ public class GameManager : MonoBehaviour
     void InitGame()
     {
         smokeExists = false;
+        lyraAnimal = spiritAnimal.cat;
+        dyraAnimal = spiritAnimal.mouse;
+        Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+        Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
         object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
         foreach (object o in obj)
         {
             GameObject g = (GameObject)o;
-            //Debug.Log(g.name);
             if (g.GetComponent<SpriteRenderer>() != null)
             {
                 g.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(g.transform.position.y * 100f) * -1;
-                //Debug.Log(g.GetComponent<SpriteRenderer>().sortingOrder);
             }
         }
     }
@@ -53,15 +60,16 @@ public class GameManager : MonoBehaviour
     //Update is called every frame.
     void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+
+    }
+
+    public void playSmoke(Vector3 pos, Quaternion quat)
+    {
+        if (GameManager.smokeExists == false)
         {
-            if (smokeExists == false)
-            {
-                GameObject thePlayer = GameObject.Find("Lyra");
-                Vector3 smokeSpawn = thePlayer.transform.position + new Vector3(0, -2.25f, 0);
-                Instantiate(smokeBomb, smokeSpawn, thePlayer.transform.rotation);
-                smokeExists = true;
-            }
+            Vector3 smokeSpawn = pos + new Vector3(0, -2.25f, 0);
+            Instantiate(spawnSmoke, smokeSpawn, quat);
+            GameManager.smokeExists = true;
         }
     }
 }

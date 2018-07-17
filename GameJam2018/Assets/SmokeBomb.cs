@@ -5,7 +5,6 @@ using UnityEngine;
 public class SmokeBomb : MonoBehaviour {
 
     Animator anim;
-    int frameCount;
 	// Use this for initialization
 	void Start () {
         //Fetch the Animator from GameObject

@@ -19,7 +19,7 @@ public class Lyra : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.SetFloat("FaceX", 0);
         anim.SetFloat("FaceY", -1);
-        speed = 0.2f;
+        speed = 5f;
         dashCount = 1;
         isDashing = false;
     }
@@ -47,7 +47,7 @@ public class Lyra : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.left * speed);
+            gameObject.transform.Translate(Vector3.left * speed * Time.deltaTime);
             anim.SetFloat("FaceX", -1);
             anim.SetFloat("FaceY", 0);
         }
@@ -55,7 +55,7 @@ public class Lyra : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.right * speed);
+            gameObject.transform.Translate(Vector3.right * speed * Time.deltaTime);
             anim.SetFloat("FaceX", 1);
             anim.SetFloat("FaceY", 0);
         }
@@ -63,7 +63,7 @@ public class Lyra : MonoBehaviour
         else if (Input.GetKey(KeyCode.UpArrow))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.up * speed);
+            gameObject.transform.Translate(Vector3.up * speed * Time.deltaTime);
             anim.SetFloat("FaceX", 0);
             anim.SetFloat("FaceY", 1);
         }
@@ -71,7 +71,7 @@ public class Lyra : MonoBehaviour
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             anim.Play("MoveLoop");
-            gameObject.transform.Translate(Vector3.down * speed);
+            gameObject.transform.Translate(Vector3.down * speed * Time.deltaTime);
             anim.SetFloat("FaceX", 0);
             anim.SetFloat("FaceY", -1);
         }
@@ -80,11 +80,15 @@ public class Lyra : MonoBehaviour
             anim.Play("IdleLoop");
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q) && GameManager.lyraAnimal == GameManager.spiritAnimal.cat)
         {
             isDashing = true;
             //Infer direction for dash based on current heading
             direction = new Vector3(anim.GetFloat("FaceX"), anim.GetFloat("FaceY"), 0);
+        }
+        if (Input.GetKey(KeyCode.E) && GameManager.lyraAnimal == GameManager.spiritAnimal.mouse)
+        {
+            GameManager.Instance.playSmoke(this.transform.position, this.transform.rotation);
         }
     }
 
@@ -99,7 +103,7 @@ public class Lyra : MonoBehaviour
         else
         {
             //Dash at 2x speed
-            gameObject.transform.Translate(direction * speed * 2f * (dashLength - dashCount)/dashLength);
+            gameObject.transform.Translate(direction * speed * 2f * Time.deltaTime * (dashLength - dashCount)/dashLength);
             dashCount++;
         }
     }
