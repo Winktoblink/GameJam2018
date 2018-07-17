@@ -80,11 +80,15 @@ public class Lyra : MonoBehaviour
             anim.Play("IdleLoop");
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q) && GameManager.lyraAnimal == GameManager.spiritAnimal.cat)
         {
             isDashing = true;
             //Infer direction for dash based on current heading
             direction = new Vector3(anim.GetFloat("FaceX"), anim.GetFloat("FaceY"), 0);
+        }
+        if (Input.GetKey(KeyCode.E) && GameManager.lyraAnimal == GameManager.spiritAnimal.mouse)
+        {
+            GameManager.Instance.playSmoke(this.transform.position, this.transform.rotation);
         }
     }
 
