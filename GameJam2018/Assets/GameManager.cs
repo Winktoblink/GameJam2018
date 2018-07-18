@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;       //Allows us to use Lists. 
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     public enum spiritAnimal {cat, mouse};
     public static spiritAnimal lyraAnimal;
     public static spiritAnimal dyraAnimal;
+    public static int roundCount = 0;
     
     //Awake is always called before any Start functions
     void Awake()
@@ -40,11 +42,24 @@ public class GameManager : MonoBehaviour
     void InitGame()
     {
         smokeExists = false;
-        lyraAnimal = spiritAnimal.cat;
-        dyraAnimal = spiritAnimal.mouse;
+        if (roundCount == 1)
+        {
+            lyraAnimal = spiritAnimal.cat;
+            dyraAnimal = spiritAnimal.mouse;
+        }
+        else if (roundCount == 2)
+        {
+            resetGame();
+        }
+        else
+        {
+            lyraAnimal = spiritAnimal.mouse;
+            dyraAnimal = spiritAnimal.cat;
+        }
         Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
         Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
         object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
+        Debug.Log("Round count is: " + roundCount);
         foreach (object o in obj)
         {
             GameObject g = (GameObject)o;
@@ -71,5 +86,17 @@ public class GameManager : MonoBehaviour
             Instantiate(spawnSmoke, smokeSpawn, quat);
             GameManager.smokeExists = true;
         }
+    }
+
+    public void resetGame()
+    {
+        SceneManager.LoadScene(0);
+        roundCount = 0;
+    }
+
+    public static void endRound()
+    {
+        roundCount++;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

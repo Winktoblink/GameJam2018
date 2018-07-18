@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CountDown.cs" />
     <Compile Include="Assets\Dyra.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Lyra.cs" />
