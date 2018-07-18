@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public enum spiritAnimal {cat, mouse};
     public static spiritAnimal lyraAnimal;
     public static spiritAnimal dyraAnimal;
-    public static int roundCount = 0;
+    public static int roundCount = 1;
     
     //Awake is always called before any Start functions
     void Awake()
@@ -49,12 +49,12 @@ public class GameManager : MonoBehaviour
         }
         else if (roundCount == 2)
         {
-            resetGame();
+            lyraAnimal = spiritAnimal.mouse;
+            dyraAnimal = spiritAnimal.cat;
         }
         else
         {
-            lyraAnimal = spiritAnimal.mouse;
-            dyraAnimal = spiritAnimal.cat;
+            resetGame();
         }
         Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
         Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
@@ -66,6 +66,33 @@ public class GameManager : MonoBehaviour
             if (g.GetComponent<SpriteRenderer>() != null)
             {
                 g.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(g.transform.position.y * 100f) * -1;
+            }
+            if (g.tag == "Indicator")
+            {
+                if (g.name == "1PCatIndicator" && lyraAnimal == spiritAnimal.cat)
+                {
+                    g.GetComponent<SpriteRenderer>().sortingOrder = 1;
+                }
+                else if (g.name == "1PMouseIndicator" && lyraAnimal == spiritAnimal.mouse)
+                {
+                    g.GetComponent<SpriteRenderer>().sortingOrder = 1;
+                }
+                else if (g.name == "2PCatIndicator" && dyraAnimal == spiritAnimal.cat)
+                {
+                    g.GetComponent<SpriteRenderer>().sortingOrder = 1;
+                }
+                else if (g.name == "2PMouseIndicator" && dyraAnimal == spiritAnimal.mouse)
+                {
+                    g.GetComponent<SpriteRenderer>().sortingOrder = 1;
+                }
+                else if (g.name == "Pounce Item Card" && dyraAnimal == spiritAnimal.cat)
+                {
+                    g.transform.position = new Vector3(11.625f, 8.625f, 0);
+                }
+                else if (g.name == "Smoke Bomb Item Card" && lyraAnimal == spiritAnimal.mouse)
+                {
+                    g.transform.position = new Vector3(-11.625f, 8.625f, 0);
+                }
             }
         }
     }
@@ -91,7 +118,7 @@ public class GameManager : MonoBehaviour
     public void resetGame()
     {
         SceneManager.LoadScene(0);
-        roundCount = 0;
+        roundCount = 1;
     }
 
     public static void endRound()
