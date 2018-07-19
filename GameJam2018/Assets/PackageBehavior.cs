@@ -30,18 +30,17 @@ public class PackageBehavior : MonoBehaviour {
     // called when the cat dashes into other mouse
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Collision tag: " + col.gameObject.tag);
         if (col.gameObject.tag == "Mouse")
         {
             anim.Play("Point_Get");
-            spawnPoint.packageDespawned();
-            GameManager.Instance.increaseScore();
+            spawnPoint.packageDespawned(); //Let the spawn point known that there is no longer a package
+            GameManager.Instance.increaseScore(); //Let the game manager known to increase the score
         }
 
         if (col.gameObject.tag == "Cat")
         {
             anim.Play("Point_Denied");
-            spawnPoint.packageDespawned();
+            spawnPoint.packageDespawned(); //Let the spawn point known that there is no longer a package
         }
     }
 }
