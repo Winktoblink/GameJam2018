@@ -41,7 +41,8 @@ public class GameManager : MonoBehaviour
     //Initializes the game for each level.
     void InitGame()
     {
-        smokeExists = false;
+
+       smokeExists = false;
         if (roundCount == 1)
         {
             lyraAnimal = spiritAnimal.cat;
@@ -59,7 +60,6 @@ public class GameManager : MonoBehaviour
         Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
         Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
         object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
-        Debug.Log("Round count is: " + roundCount);
         foreach (object o in obj)
         {
             GameObject g = (GameObject)o;

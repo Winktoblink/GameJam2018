@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Rick/Desktop/GameJam2018.exe
+C:/Users/Stephen/Desktop/test/Chase! Chase! Chase!.exe
 SceneListBegin?
 Assets/Scenes/Main Menu.unity
 Assets/Scenes/Radical Street.unity
