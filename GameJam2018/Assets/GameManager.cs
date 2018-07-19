@@ -11,10 +11,9 @@ public class GameManager : MonoBehaviour
     public GameObject spawnPackage;
     public GameObject spawnLyra;
     public GameObject spawnDyra;
+    public static GameObject player1;
+    public static GameObject player2;
     public static bool smokeExists;
-    public enum spiritAnimal {cat, mouse};
-    public static spiritAnimal lyraAnimal;
-    public static spiritAnimal dyraAnimal;
     public static int p1score = 0;
     public static int p2score = 0;
     public static int roundCount = 1;
@@ -49,21 +48,17 @@ public class GameManager : MonoBehaviour
         if (roundCount == 1)
         {
             SoundManager.instance.PlayMusic(mainTheme);
-            lyraAnimal = spiritAnimal.cat;
-            dyraAnimal = spiritAnimal.mouse;
-            var Player1 = Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
-            Player1.gameObject.tag = "Cat";
-            var Player2 = Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
-            Player2.gameObject.tag = "Mouse";
+            player1 = Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+            player1.gameObject.tag = "Cat";
+            player2 = Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+            player2.gameObject.tag = "Mouse";
         }
         else if (roundCount == 2)
         {
-            lyraAnimal = spiritAnimal.mouse;
-            dyraAnimal = spiritAnimal.cat;
-            var Player1 = Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
-            Player1.gameObject.tag = "Mouse";
-            var Player2 = Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
-            Player2.gameObject.tag = "Cat";
+            player1 = Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+            player1.gameObject.tag = "Mouse";
+            player2 = Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+            player2.gameObject.tag = "Cat";
         }
         else
         {
@@ -79,27 +74,27 @@ public class GameManager : MonoBehaviour
             }
             if (g.tag == "Indicator")
             {
-                if (g.name == "1PCatIndicator" && lyraAnimal == spiritAnimal.cat)
+                if (g.name == "1PCatIndicator" && player1.gameObject.tag == "Cat")
                 {
                     g.GetComponent<SpriteRenderer>().sortingOrder = 1;
                 }
-                else if (g.name == "1PMouseIndicator" && lyraAnimal == spiritAnimal.mouse)
+                else if (g.name == "1PMouseIndicator" && player1.gameObject.tag == "Mouse")
                 {
                     g.GetComponent<SpriteRenderer>().sortingOrder = 1;
                 }
-                else if (g.name == "2PCatIndicator" && dyraAnimal == spiritAnimal.cat)
+                else if (g.name == "2PCatIndicator" && player2.gameObject.tag == "Cat")
                 {
                     g.GetComponent<SpriteRenderer>().sortingOrder = 1;
                 }
-                else if (g.name == "2PMouseIndicator" && dyraAnimal == spiritAnimal.mouse)
+                else if (g.name == "2PMouseIndicator" && player2.gameObject.tag == "Mouse")
                 {
                     g.GetComponent<SpriteRenderer>().sortingOrder = 1;
                 }
-                else if (g.name == "Pounce Item Card" && dyraAnimal == spiritAnimal.cat)
+                else if (g.name == "Pounce Item Card" && player2.gameObject.tag == "Cat")
                 {
                     g.transform.position = new Vector3(11.625f, 8.625f, 0);
                 }
-                else if (g.name == "Smoke Bomb Item Card" && lyraAnimal == spiritAnimal.mouse)
+                else if (g.name == "Smoke Bomb Item Card" && player1.gameObject.tag == "Mouse")
                 {
                     g.transform.position = new Vector3(-11.625f, 8.625f, 0);
                 }
