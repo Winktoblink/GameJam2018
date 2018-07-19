@@ -44,7 +44,7 @@ public class Dyra : MonoBehaviour
     void Movement()
     {
         //Movement inputs
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetAxis("2P_Horizontal") < 0)
         {
             anim.Play("MoveLoop");
             gameObject.transform.Translate(Vector3.left * speed * Time.deltaTime);
@@ -52,7 +52,7 @@ public class Dyra : MonoBehaviour
             anim.SetFloat("FaceY", 0);
         }
 
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetAxis("2P_Horizontal") > 0)
         {
             anim.Play("MoveLoop");
             gameObject.transform.Translate(Vector3.right * speed * Time.deltaTime);
@@ -60,7 +60,7 @@ public class Dyra : MonoBehaviour
             anim.SetFloat("FaceY", 0);
         }
 
-        else if (Input.GetKey(KeyCode.W))
+        else if (Input.GetAxis("2P_Vertical") > 0)
         {
             anim.Play("MoveLoop");
             gameObject.transform.Translate(Vector3.up * speed * Time.deltaTime);
@@ -68,7 +68,7 @@ public class Dyra : MonoBehaviour
             anim.SetFloat("FaceY", 1);
         }
 
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetAxis("2P_Vertical") < 0)
         {
             anim.Play("MoveLoop");
             gameObject.transform.Translate(Vector3.down * speed * Time.deltaTime);
@@ -80,13 +80,13 @@ public class Dyra : MonoBehaviour
             anim.Play("IdleLoop");
         }
 
-        if (Input.GetKey(KeyCode.Q) && GameManager.dyraAnimal == GameManager.spiritAnimal.cat)
+        if (Input.GetButtonDown("2P_Action") && GameManager.dyraAnimal == GameManager.spiritAnimal.cat)
         {
             isDashing = true;
             //Infer direction for dash based on current heading
             direction = new Vector3(anim.GetFloat("FaceX"), anim.GetFloat("FaceY"), 0);
         }
-        if (Input.GetKey(KeyCode.E) && GameManager.dyraAnimal == GameManager.spiritAnimal.mouse)
+        if (Input.GetButtonDown("2P_Action") && GameManager.dyraAnimal == GameManager.spiritAnimal.mouse)
         {
             GameManager.Instance.playSmoke(this.transform.position, this.transform.rotation);
         }
