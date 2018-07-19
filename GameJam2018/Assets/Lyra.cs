@@ -8,7 +8,7 @@ public class Lyra : MonoBehaviour
     Animator anim;
     float speed;
     Vector3 direction;
-    const int dashLength = 30;
+    const int dashLength = 90;
     int dashCount;
     bool isDashing;
 
@@ -52,7 +52,7 @@ public class Lyra : MonoBehaviour
             anim.SetFloat("FaceY", 0);
         }
 
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetButtonDown("1P_Horizontal"))
         {
             anim.Play("MoveLoop");
             gameObject.transform.Translate(Vector3.right * speed * Time.deltaTime);
@@ -80,7 +80,7 @@ public class Lyra : MonoBehaviour
             anim.Play("IdleLoop");
         }
 
-        if (Input.GetKey(KeyCode.Q) && GameManager.lyraAnimal == GameManager.spiritAnimal.cat)
+        if (Input.GetButtonDown("1P_Pounce") && GameManager.lyraAnimal == GameManager.spiritAnimal.cat)
         {
             isDashing = true;
             //Infer direction for dash based on current heading
@@ -103,7 +103,7 @@ public class Lyra : MonoBehaviour
         else
         {
             //Dash at 2x speed
-            gameObject.transform.Translate(direction * speed * 2f * Time.deltaTime * (dashLength - dashCount)/dashLength);
+            gameObject.transform.Translate(direction * speed * 2f * Time.deltaTime * (dashLength - dashCount + 1)/dashLength);
             dashCount++;
         }
     }

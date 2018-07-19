@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Stephen/Desktop/test/GameJam2018.exe
+C:/Users/Rick/Desktop/GameJam2018.exe
 SceneListBegin?
 Assets/Scenes/Main Menu.unity
 Assets/Scenes/Radical Street.unity

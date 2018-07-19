@@ -225,8 +225,8 @@ AnimatorState:
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_CycleOffsetParameter: FaceX
+  m_TimeParameter: FaceX
 --- !u!1102 &1102541759757306066
 AnimatorState:
   serializedVersion: 5
