@@ -8,12 +8,15 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
     public GameObject spawnSmoke;
+    public GameObject spawnPackage;
     public GameObject spawnLyra;
     public GameObject spawnDyra;
     public static bool smokeExists;
     public enum spiritAnimal {cat, mouse};
     public static spiritAnimal lyraAnimal;
     public static spiritAnimal dyraAnimal;
+    public static int p1score = 0;
+    public static int p2score = 0;
     public static int roundCount = 1;
     public AudioClip mainTheme;
 
@@ -48,18 +51,24 @@ public class GameManager : MonoBehaviour
             SoundManager.instance.PlayMusic(mainTheme);
             lyraAnimal = spiritAnimal.cat;
             dyraAnimal = spiritAnimal.mouse;
+            var Player1 = Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+            Player1.gameObject.tag = "Cat";
+            var Player2 = Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+            Player2.gameObject.tag = "Mouse";
         }
         else if (roundCount == 2)
         {
             lyraAnimal = spiritAnimal.mouse;
             dyraAnimal = spiritAnimal.cat;
+            var Player1 = Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+            Player1.gameObject.tag = "Mouse";
+            var Player2 = Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+            Player2.gameObject.tag = "Cat";
         }
         else
         {
             resetGame();
         }
-        Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
-        Instantiate(spawnDyra, new Vector3(10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
         object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
         foreach (object o in obj)
         {
@@ -116,8 +125,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void playPackage(PackageSpawnBehavior spawnPoint)
+    {
+        Vector3 packageSpawn = spawnPoint.transform.position + new Vector3(0, 0.5f, 0);
+        PackageBehavior package = Instantiate(spawnPackage, packageSpawn, spawnPoint.transform.rotation).GetComponent<PackageBehavior>();
+        package.setSpawn(spawnPoint);
+    }
+
+    public void increaseScore()
+    {
+        if(roundCount == 1)
+        {
+            p2score++;
+        }
+        if(roundCount == 2)
+        {
+            p1score++;
+        }
+        Debug.Log("P1 Score: " + p1score  + " P2 Score: " + p2score);
+    }
+
     public void resetGame()
     {
+        p1score = 0;
+        p2score = 0;
         roundCount = 1;
         SoundManager.instance.StopMusic(mainTheme);
         SceneManager.LoadScene(0);

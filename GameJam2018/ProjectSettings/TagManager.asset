@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Indicator
+  - Cat
+  - Mouse
   layers:
   - Default
   - TransparentFX
@@ -44,6 +46,9 @@ TagManager:
     locked: 0
   - name: Floor
     uniqueID: 1428468809
+    locked: 0
+  - name: Grounded
+    uniqueID: 4024657245
     locked: 0
   - name: Units
     uniqueID: 3928323287

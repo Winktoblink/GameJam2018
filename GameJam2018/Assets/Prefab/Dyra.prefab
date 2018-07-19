@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114152371820977836}
   m_Layer: 0
   m_Name: Dyra
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa6497346e4cf44287b1d262fce7e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal: 0
 --- !u!212 &212865542731564828
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -152,7 +151,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -366644009
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 91606221ae3af2d4d8ba495e1b616c30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

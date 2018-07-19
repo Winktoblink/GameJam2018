@@ -1,0 +1,47 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PackageBehavior : MonoBehaviour {
+    Animator anim;
+    PackageSpawnBehavior spawnPoint;
+
+
+	// Use this for initialization
+	void Start () {
+        anim = GetComponent<Animator>();
+        anim.Play("Spawn");        
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        if (this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("End"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    //Give the package a reference to relay information back to
+    public void setSpawn(PackageSpawnBehavior spawn)
+    {
+        spawnPoint = spawn;
+    }
+
+    // called when the cat dashes into other mouse
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("Collision tag: " + col.gameObject.tag);
+        if (col.gameObject.tag == "Mouse")
+        {
+            anim.Play("Point_Get");
+            spawnPoint.packageDespawned();
+            GameManager.Instance.increaseScore();
+        }
+
+        if (col.gameObject.tag == "Cat")
+        {
+            anim.Play("Point_Denied");
+            spawnPoint.packageDespawned();
+        }
+    }
+}
