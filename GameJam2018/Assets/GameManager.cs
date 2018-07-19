@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     public static spiritAnimal lyraAnimal;
     public static spiritAnimal dyraAnimal;
     public static int roundCount = 1;
-    
+    public AudioClip mainTheme;
+
     //Awake is always called before any Start functions
     void Awake()
     {
@@ -41,10 +42,10 @@ public class GameManager : MonoBehaviour
     //Initializes the game for each level.
     void InitGame()
     {
-
-       smokeExists = false;
+        smokeExists = false;
         if (roundCount == 1)
         {
+            SoundManager.instance.PlayMusic(mainTheme);
             lyraAnimal = spiritAnimal.cat;
             dyraAnimal = spiritAnimal.mouse;
         }
@@ -117,8 +118,9 @@ public class GameManager : MonoBehaviour
 
     public void resetGame()
     {
-        SceneManager.LoadScene(0);
         roundCount = 1;
+        SoundManager.instance.StopMusic(mainTheme);
+        SceneManager.LoadScene(0);
     }
 
     public static void endRound()
