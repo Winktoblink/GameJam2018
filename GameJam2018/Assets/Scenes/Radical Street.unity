@@ -15875,8 +15875,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1900662675}
   - component: {fileID: 1900662678}
-  - component: {fileID: 1900662677}
   - component: {fileID: 1900662676}
+  - component: {fileID: 1900662677}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged

@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
         smokeExists = false;
         if (roundCount == 1)
         {
+            p1score = 0;
+            p2score = 0;
             SoundManager.instance.PlayMusic(mainTheme);
             player1 = Instantiate(spawnLyra, new Vector3(-10.5f, 0, 0), Quaternion.Euler(0, 0, 0));
             player1.gameObject.tag = "Cat";
@@ -142,12 +144,9 @@ public class GameManager : MonoBehaviour
 
     public void resetGame()
     {
-        p1score = 0;
-        p2score = 0;
         roundCount = 1;
         SoundManager.instance.StopMusic(mainTheme);
-        SceneManager.LoadScene(0);
-        SceneManager.UnloadSceneAsync(1);
+        SceneManager.LoadScene(2);
     }
 
     public static void endRound()

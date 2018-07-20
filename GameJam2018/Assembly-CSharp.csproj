@@ -72,6 +72,7 @@
     <Compile Include="Assets\SmokeBomb.cs" />
     <Compile Include="Assets\SoundManager.cs" />
     <Compile Include="Assets\UIManager.cs" />
+    <Compile Include="Assets\WinnerScreen.cs" />
     <None Include="Assets\AnimationImporter\readme.txt" />
     <None Include="Assets\Dadako\BitmapFonts\Pixel\_PixelCharLimits.txt" />
     <Reference Include="UnityEditor.StandardEvents">

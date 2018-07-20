@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Radical Street.unity
     guid: 23f5273f267b6af459ac2fbad9ae44ee
+  - enabled: 1
+    path: Assets/Scenes/Winner Screen.unity
+    guid: 101935dd3acac104cbab3227b0a232c0
   m_configObjects: {}
