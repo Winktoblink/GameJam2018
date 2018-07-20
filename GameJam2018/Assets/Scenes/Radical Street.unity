@@ -12906,6 +12906,7 @@ MonoBehaviour:
   spawnDyra: {fileID: 1027736164881852, guid: 148a212643ec47046a599e01c1d78ed2, type: 2}
   mainTheme: {fileID: 8300000, guid: dfda9e1a463b5d3498fee6784fd1de73, type: 3}
   smokeBombSound: {fileID: 8300000, guid: e417b240bd55e4c4e82a026a177a3ac1, type: 3}
+  actionFail: {fileID: 8300000, guid: 40e1ff176126ddf47976ef46a85076cd, type: 3}
 --- !u!4 &1457971421
 Transform:
   m_ObjectHideFlags: 0

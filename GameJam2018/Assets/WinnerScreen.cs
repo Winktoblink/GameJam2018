@@ -34,9 +34,9 @@ public class WinnerScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if ((Input.GetKeyDown("enter") || Input.GetKeyDown("return")) && cooldown > waitTime)
+        if ((Input.GetKeyDown("return") || Input.GetKeyDown("return")) && cooldown > waitTime)
         {
-            SoundManager.instance.StopMusic(this.GetComponent<AudioSource>().GetComponent<AudioClip>());
+            SoundManager.instance.StopMusic(winner);
             SceneManager.LoadScene(0);
         }
         cooldown += Time.deltaTime;

@@ -17,8 +17,12 @@ public class GameManager : MonoBehaviour
     public static int p1score = 0;
     public static int p2score = 0;
     public static int roundCount = 1;
+    float soundDelay = 0;
+
+    //Music and sounds
     public AudioClip mainTheme;
     public AudioClip smokeBombSound;
+    public AudioClip actionFail;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -110,7 +114,10 @@ public class GameManager : MonoBehaviour
     //Update is called every frame.
     void Update()
     {
-
+        if (GameManager.smokeExists == false)
+        {
+            soundDelay += Time.deltaTime;
+        }
     }
 
     public void playSmoke(Vector3 pos, Quaternion quat)
@@ -121,6 +128,11 @@ public class GameManager : MonoBehaviour
             Instantiate(spawnSmoke, smokeSpawn, quat);
             GameManager.smokeExists = true;
             SoundManager.instance.PlayEffects(smokeBombSound);
+        }
+        else if (soundDelay > 0.5)
+        {
+            SoundManager.instance.PlayEffects(actionFail);
+            soundDelay = 0;
         }
     }
 
