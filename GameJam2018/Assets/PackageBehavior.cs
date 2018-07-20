@@ -36,12 +36,14 @@ public class PackageBehavior : MonoBehaviour {
             anim.Play("Point_Get");
             spawnPoint.packageDespawned(); //Let the spawn point known that there is no longer a package
             GameManager.Instance.increaseScore(); //Let the game manager known to increase the score
+            Destroy(this.GetComponent<BoxCollider2D>());
         }
 
         if (col.gameObject.tag == "Cat")
         {
             anim.Play("Point_Denied");
             spawnPoint.packageDespawned(); //Let the spawn point known that there is no longer a package
+            Destroy(this.GetComponent<BoxCollider2D>());
         }
     }
 }

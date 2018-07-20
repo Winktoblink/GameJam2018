@@ -67,6 +67,8 @@
     <Compile Include="Assets\Lyra.cs" />
     <Compile Include="Assets\PackageBehavior.cs" />
     <Compile Include="Assets\PackageSpawnBehavior.cs" />
+    <Compile Include="Assets\Score1.cs" />
+    <Compile Include="Assets\Score2.cs" />
     <Compile Include="Assets\SmokeBomb.cs" />
     <Compile Include="Assets\SoundManager.cs" />
     <Compile Include="Assets\UIManager.cs" />
