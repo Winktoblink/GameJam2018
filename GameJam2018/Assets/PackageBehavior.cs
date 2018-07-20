@@ -28,8 +28,9 @@ public class PackageBehavior : MonoBehaviour {
     }
 
     // called when the cat dashes into other mouse
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("Package hit"); 
         if (col.gameObject.tag == "Mouse")
         {
             anim.Play("Point_Get");
