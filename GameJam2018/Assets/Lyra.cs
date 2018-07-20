@@ -8,8 +8,8 @@ public class Lyra : MonoBehaviour
     Animator anim;
     float speed;
     Vector3 direction;
-    const int dashLength = 90;
-    int dashCount;
+    const float dashLength = 1.5f;
+    float dashCount;
     bool isDashing;
 
     // Use this for initialization
@@ -20,7 +20,7 @@ public class Lyra : MonoBehaviour
         anim.SetFloat("FaceX", 0);
         anim.SetFloat("FaceY", -1);
         speed = 5f;
-        dashCount = 1;
+        dashCount = 0;
         isDashing = false;
     }
 
@@ -97,14 +97,14 @@ public class Lyra : MonoBehaviour
         anim.Play("DashLoop");
         if (dashCount > dashLength)
         {
-            dashCount = 1;
+            dashCount = 0;
             isDashing = false;
         }
         else
         {
             //Dash at 2x speed
-            gameObject.transform.Translate(direction * speed * 2f * Time.deltaTime * (dashLength - dashCount + 1)/dashLength);
-            dashCount++;
+            gameObject.transform.Translate(direction * speed * 2.5f * Time.deltaTime * (dashLength - dashCount)/dashLength);
+            dashCount+=Time.deltaTime;
         }
     }
 

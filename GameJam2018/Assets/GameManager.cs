@@ -147,11 +147,19 @@ public class GameManager : MonoBehaviour
         roundCount = 1;
         SoundManager.instance.StopMusic(mainTheme);
         SceneManager.LoadScene(0);
+        SceneManager.UnloadSceneAsync(1);
     }
 
     public static void endRound()
     {
         roundCount++;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (roundCount == 3)
+        {
+            GameManager.Instance.resetGame();
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
