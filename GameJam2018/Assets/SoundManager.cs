@@ -4,6 +4,7 @@ using System.Collections;
 public class SoundManager : MonoBehaviour
 {
     public AudioSource musicSource;
+    public AudioSource efxSource;
     public static SoundManager instance = null;
 
     void Awake()
@@ -20,6 +21,12 @@ public class SoundManager : MonoBehaviour
     {
         musicSource.clip = clip;
         musicSource.Play();
+    }
+
+    public void PlayEffects(AudioClip clip)//We don't need Play for your problem.
+    {
+        efxSource.clip = clip;
+        efxSource.Play();
     }
 
     public void StopMusic(AudioClip clip)

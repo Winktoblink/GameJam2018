@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be4d533110312e4e97e4ab6b2f9eb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallHit: {fileID: 8300000, guid: 0976dcd20a99ad348bb817a8a354df81, type: 3}
+  smokeBombSound: {fileID: 8300000, guid: e417b240bd55e4c4e82a026a177a3ac1, type: 3}
 --- !u!212 &212906504694086578
 SpriteRenderer:
   m_ObjectHideFlags: 1

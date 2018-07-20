@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public static int p2score = 0;
     public static int roundCount = 1;
     public AudioClip mainTheme;
+    public AudioClip smokeBombSound;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -119,6 +120,7 @@ public class GameManager : MonoBehaviour
             Vector3 smokeSpawn = pos + new Vector3(0, -2.25f, 0);
             Instantiate(spawnSmoke, smokeSpawn, quat);
             GameManager.smokeExists = true;
+            SoundManager.instance.PlayEffects(smokeBombSound);
         }
     }
 
@@ -139,7 +141,6 @@ public class GameManager : MonoBehaviour
         {
             p1score++;
         }
-        Debug.Log("P1 Score: " + p1score  + " P2 Score: " + p2score);
     }
 
     public void resetGame()

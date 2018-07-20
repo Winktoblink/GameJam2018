@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinnerScreen : MonoBehaviour {
+    public AudioClip winner;
+    public float waitTime;
+    private float cooldown;
 
-	// Use this for initialization
-	void Start () {
-        Vector3 upscale = new Vector3(0.1F, 0, 0);
-
+    // Use this for initialization
+    void Start () {
+        Vector3 upscale = new Vector3(0.1f, 0, 0);
+        cooldown = 0;
+        SoundManager.instance.PlayMusic(winner);
         if (GameManager.p1score > GameManager.p2score)
         {
             GameObject winner = Instantiate(GameManager.Instance.spawnLyra, new Vector3(0.5f, 1.5f, 0), Quaternion.Euler(0, 0, 0));
@@ -29,6 +34,11 @@ public class WinnerScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if ((Input.GetKeyDown("enter") || Input.GetKeyDown("return")) && cooldown > waitTime)
+        {
+            SoundManager.instance.StopMusic(this.GetComponent<AudioSource>().GetComponent<AudioClip>());
+            SceneManager.LoadScene(0);
+        }
+        cooldown += Time.deltaTime;
+    }
 }

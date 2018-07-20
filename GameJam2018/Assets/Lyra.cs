@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lyra : MonoBehaviour
 {
-
+    public AudioClip wallHit;
     Animator anim;
     float speed;
     Vector3 direction;
@@ -103,18 +103,25 @@ public class Lyra : MonoBehaviour
         else
         {
             //Dash at 2x speed
-            gameObject.transform.Translate(direction * speed * 2.5f * Time.deltaTime * (dashLength - dashCount)/dashLength);
-            dashCount+=Time.deltaTime;
+            gameObject.transform.Translate(direction * speed * 2.0f * Time.deltaTime * (dashLength - dashCount) / dashLength);
+            dashCount += Time.deltaTime;
         }
     }
 
     // called when the cat dashes into other mouse
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Mouse" && isDashing)
+        if (col.gameObject.CompareTag("Mouse") && isDashing)
         {
             GameManager.endRound();
         }
+
+        if (col.gameObject.CompareTag("Wall"))
+        {
+            SoundManager.instance.PlayEffects(wallHit);
+        }
     }
+
+    
 
 }
