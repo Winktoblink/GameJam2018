@@ -29,9 +29,8 @@ public class SoundManager : MonoBehaviour
         efxSource.Play();
     }
 
-    public void StopMusic(AudioClip clip)
+    public void StopMusic()
     {
-        musicSource.clip = clip;
         musicSource.Stop();
     }
 }

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject spawnDyra;
     public static GameObject player1;
     public static GameObject player2;
-    public static bool smokeExists;
+    public static bool smokeExists = false;
     public static int p1score = 0;
     public static int p2score = 0;
     public static int roundCount = 1;
@@ -29,9 +29,11 @@ public class GameManager : MonoBehaviour
     {
         //Check if instance already exists
         if (Instance == null)
-
+        {
             //if not, set instance to this
             Instance = this;
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
 
         //If instance already exists and it's not this:
         else if (Instance != this)
@@ -49,6 +51,12 @@ public class GameManager : MonoBehaviour
     //Initializes the game for each level.
     void InitGame()
     {
+        
+    }
+
+    private void startGame()
+    {
+        SoundManager.instance.PlayMusic(mainTheme);
         smokeExists = false;
         if (roundCount == 1)
         {
@@ -69,7 +77,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            resetGame();
+            endRound();
         }
         object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
         foreach (object o in obj)
@@ -108,8 +116,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-
 
     //Update is called every frame.
     void Update()
@@ -158,8 +164,17 @@ public class GameManager : MonoBehaviour
     public void resetGame()
     {
         roundCount = 1;
-        SoundManager.instance.StopMusic(mainTheme);
+        SoundManager.instance.StopMusic();
         SceneManager.LoadScene(2);
+    }
+
+
+    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+    {
+        if (aScene == SceneManager.GetSceneByBuildIndex(1))
+        {
+            startGame();
+        }
     }
 
     public static void endRound()
@@ -171,7 +186,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(3);
         }
     }
 }
