@@ -109,7 +109,7 @@ public class Lyra : MonoBehaviour
     }
 
     // called when the cat dashes into other mouse
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionStay2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Mouse") && isDashing)
         {
