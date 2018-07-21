@@ -182,6 +182,8 @@ public class GameManager : MonoBehaviour
         roundCount++;
         if (roundCount == 3)
         {
+            p1score = 0;
+            p2score = 0;
             GameManager.Instance.resetGame();
         }
         else
