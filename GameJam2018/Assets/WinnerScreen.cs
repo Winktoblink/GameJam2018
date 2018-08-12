@@ -27,6 +27,8 @@ public class WinnerScreen : MonoBehaviour {
             winner2.transform.localScale = new Vector3(3, 3, 0);
         }
         SoundManager.instance.PlayMusic(winner);
+        GameManager.p1score = 0;
+        GameManager.p2score = 0;
     }
 	
 	// Update is called once per frame
